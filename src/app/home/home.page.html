@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Citas de psicólogos famosos</ion-title>
+
+    <ion-buttons slot="end">
+  <ion-button routerLink="/configuraciones">
+    <ion-icon
+      name="settings-outline"
+      color="primary">
+    </ion-icon>
+  </ion-button>
+</ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="cita-container" *ngIf="citaActual">
+
+    <ion-card class="cita-card">
+      <ion-card-content>
+
+        <div class="cita-frase">
+          “{{ citaActual.frase }}”
+        </div>
+
+        <div class="cita-autor">
+          — {{ citaActual.autor }}
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+   <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <ion-button
+      shape="round"
+      routerLink="/gestioncitas">
+      GESTIONAR CITAS
+    </ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,40 @@
+<div class="formulario">
+      <h3>Crea una nueva cita</h3>
+
+      <ion-item>
+        <ion-input
+          label="Cita"
+          labelPlacement="stacked"
+          [(ngModel)]="frase"
+          required>
+        </ion-input>
+      </ion-item>
+      <ion-label class="danger" *ngIf="frase.trim() === '' && clicked">
+        La cita es obligatoria
+      </ion-label>
+      <ion-label class="danger" *ngIf="frase.trim().length < 5 && frase.trim() != '' && clicked">
+        La cita debe conterner 5 o más caracteres
+      </ion-label>
+      <ion-item>
+        <ion-input
+          label="Autor"
+          labelPlacement="stacked"
+          [(ngModel)]="autor"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-label class="danger" *ngIf="autor.trim() === '' && clicked">
+        El autor es obligatorio
+      </ion-label>
+      <ion-label class="danger" *ngIf="autor.trim().length < 2 && autor.trim() != '' && clicked">
+        El autor debe contener mínimo 2 caracteres
+      </ion-label>
+
+      <ion-button
+        fill="clear"
+        color="primary"
+        (click)="submit()">
+        AGREGAR +
+      </ion-button>
+    </div>

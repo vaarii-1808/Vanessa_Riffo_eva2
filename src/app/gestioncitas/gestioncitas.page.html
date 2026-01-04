@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Gestión de citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ <app-formulariocitas
+    (agregar)="agregarCita($event)">
+  </app-formulariocitas>
+  <ion-list>
+    <div class="cita-item" *ngFor="let cita of citas; let i = index">
+      <div class="texto">
+        <div class="frase">{{ cita.frase }}</div>
+        <div class="autor">{{ cita.autor }}</div>
+      </div>
+
+      <ion-button
+        fill="clear"
+        color="primary"
+        (click)="eliminarCita(cita)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+
+</ion-content>
+
